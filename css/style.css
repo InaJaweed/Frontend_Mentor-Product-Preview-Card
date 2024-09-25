@@ -1,0 +1,118 @@
+/* ### Primary
+
+- Dark cyan: hsl(158, 36%, 37%) -- Cart/Price
+- Cream: hsl(30, 38%, 92%) -- BG
+
+### Neutral
+
+- Very dark blue: hsl(212, 21%, 14%) -- Title
+- Dark grayish blue: hsl(228, 12%, 48%) - Base Text
+- White: hsl(0, 0%, 100%) --Container*/
+
+:root {
+	--clr-bg: hsl(30, 38%, 92%);
+	--clr-container: hsl(0, 0%, 100%);
+
+	--clr-base-text: hsl(228, 12%, 48%);
+	--clr-title: hsl(212, 21%, 14%);
+	--clr-price-cart: hsl(158, 36%, 37%);
+
+	--ff-base: 'Montserrat', sans-serif;
+	--ff-secondary: 'Fraunces', serif;
+}
+
+body {
+	display: grid;
+	min-height: 100vh;
+	place-items: center;
+	font-size: 14px;
+
+	background-color: var(--clr-bg);
+	font-family: var(--ff-base);
+	color: var(--clr-base-text);
+	font-weight: 500;
+	margin: 1rem;
+}
+
+.product-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	background-color: var(--clr-container);
+
+	max-width: 600px;
+}
+
+.product-info {
+	display: grid;
+	justify-content: space-around;
+	padding: 2rem;
+	gap: 1rem;
+}
+
+.product-category {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-weight: 500;
+}
+
+.product-title {
+	font-family: var(--ff-secondary);
+	color: var(--clr-title);
+	font-weight: 700;
+	line-height: 2rem;
+	font-size: 32px;
+}
+.product-cost {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.product-price {
+	font-family: var(--ff-secondary);
+	font-weight: 700;
+	color: var(--clr-price-cart);
+	font-size: 32px;
+}
+
+.product-cart {
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-flex;
+	gap: 0.75rem;
+	justify-content: center;
+	align-items: center;
+
+	border: none;
+	border-radius: 0.5rem;
+	background-color: var(--clr-price-cart);
+	color: var(--clr-bg);
+	font-weight: 700;
+
+	padding: 0.75rem 1.5rem;
+}
+
+.product-cart[data-icon='cart']::before {
+	content: '';
+	background-image: url(/images/icon-cart.svg);
+	width: 15px;
+	height: 16px;
+}
+
+.product-cart:hover {
+	background-color: hsl(158, 36%, 25%);
+}
+.product-cart:focus {
+	background-color: hsl(158, 36%, 25%);
+}
+
+@media (max-width: 600px) {
+	.product-container {
+		display: flex;
+		flex-direction: column;
+		max-width: 360px;
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"dependencies": {
+		"firebase": "^10.13.1"
+	},
+	"scripts": {
+		"deploy-product-page": "firebase deploy --only hosting:frontend-mentor-product-preview-9fd5d"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"hosting": {
+		"site": "frontend-mentor-product-preview-9fd5d",
+		"public": ".",
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+	}
+}
